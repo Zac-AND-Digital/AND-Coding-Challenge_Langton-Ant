@@ -123,10 +123,6 @@ public class ModelAnt {
 
         }
 
-
-        System.out.println("Ant Direction -> " + direction.name());
-        System.out.println("Ant Facing -> " + antTexture.name());
-
     }
 
 }

@@ -17,6 +17,9 @@ public class ModelGrid {
 
     ModelGrid(int screenWidth, int screenHeight) {
 
+        screenWidth /= (TextureMap.TEXTURE_MAP.get(TextureType.GRID_WHITE).getWidth() * 0.5);
+        screenHeight /= (TextureMap.TEXTURE_MAP.get(TextureType.GRID_WHITE).getHeight() * 0.5);
+
         this.gridTexture = new Texture[screenHeight][screenWidth];
         this.gridRectangle = new Rectangle[screenHeight][screenWidth];
         this.gridTextureType = new TextureType[screenHeight][screenWidth];
