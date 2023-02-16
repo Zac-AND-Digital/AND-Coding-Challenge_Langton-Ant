@@ -3,8 +3,10 @@ package com.and.challenge.ant;
 import com.and.challenge.constant.CameraResolution;
 import com.and.challenge.constant.TextureMap;
 import com.and.challenge.constant.TextureType;
+import com.badlogic.gdx.math.RandomXS128;
 
 import java.awt.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class ModelAnt {
 
@@ -50,7 +52,24 @@ public class ModelAnt {
 
     TextureType getTileJustSeenColour() { return tileJustSeenColour; }
 
-    void render(TextureType gridColourCurrent) {
+    void render(TextureType gridColourCurrent, boolean isResetAnt) {
+
+        if (isResetAnt) {
+
+            int minWidth = (int) ((double) CameraResolution.WIDTH * 0.25d);
+            int maxWidth = (int) ((double) CameraResolution.WIDTH * 0.75d);
+            int minHeight = (int) ((double) CameraResolution.HEIGHT * 0.25d);
+            int maxHeight = (int) ((double) CameraResolution.HEIGHT * 0.75d);
+
+            int antRow = ThreadLocalRandom.current().nextInt(minWidth, maxWidth);
+            int antColumn = ThreadLocalRandom.current().nextInt(minHeight, maxHeight);
+
+            this.ant.x = ant.width * (Math.round((float) antRow / (float) ant.width));
+            this.ant.y = ant.height * (Math.round((float) antColumn / (float) ant.height));
+
+            System.out.println("Ant Randomised Position -> " + "(" + ant.x + ", " + ant.y + ")");
+
+        }
 
         this.tileJustSeen[0] = ant.x / ant.width;
         this.tileJustSeen[1] = ant.y / ant.height;

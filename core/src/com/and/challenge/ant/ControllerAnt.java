@@ -11,13 +11,19 @@ public class ControllerAnt {
 
     private float dT;
 
-    public ControllerAnt() {
+    private float antPauseTime;
+
+    public ControllerAnt(float antPauseTime) {
 
         this.dT = Float.MAX_VALUE;
 
         this.modelAnt = new ModelAnt();
 
+        this.antPauseTime = antPauseTime;
+
     }
+
+    public void setAntPauseTime(float antPauseTime) { this.antPauseTime = antPauseTime; }
 
     public Rectangle getAnt() { return modelAnt.getAnt(); }
 
@@ -27,13 +33,13 @@ public class ControllerAnt {
 
     public TextureType getTileJustSeenColour() { return modelAnt.getTileJustSeenColour(); }
 
-    public void render(TextureType gridColourCurrent) {
+    public void render(TextureType gridColourCurrent, boolean isResetAnt) {
 
         this.dT += Gdx.graphics.getDeltaTime();
 
-        if (dT >= 0.256f) {
+        if (dT >= antPauseTime) {
 
-            this.modelAnt.render(gridColourCurrent);
+            this.modelAnt.render(gridColourCurrent, isResetAnt);
             this.dT = 0.0f;
 
         }

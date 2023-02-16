@@ -15,10 +15,18 @@ public class ModelGrid {
 
     private TextureType gridColourCurrent;
 
+    private final int maxRow;
+    private final int maxColumn;
+
+    private boolean resetAnt;
+
     ModelGrid(int screenWidth, int screenHeight) {
 
         screenWidth /= (TextureMap.TEXTURE_MAP.get(TextureType.GRID_WHITE).getWidth() * 0.5);
         screenHeight /= (TextureMap.TEXTURE_MAP.get(TextureType.GRID_WHITE).getHeight() * 0.5);
+
+        this.maxRow = (screenWidth / 2) - 1;
+        this.maxColumn = (screenHeight / 2) - 1;
 
         this.gridTexture = new Texture[screenHeight][screenWidth];
         this.gridRectangle = new Rectangle[screenHeight][screenWidth];
@@ -44,17 +52,27 @@ public class ModelGrid {
 
         this.gridColourCurrent = TextureType.GRID_WHITE;
 
+        this.resetAnt = false;
+
     }
 
     TextureType getGridColourCurrent() { return gridColourCurrent; }
 
+    boolean isResetAnt() { return resetAnt; }
+
     void render(SpriteBatch batch, Rectangle ant, TextureType rotation, int[] tileJustSeen, TextureType tileJustSeenColour) {
+
+        if (this.resetAnt) this.resetAnt = false;
 
         this.gridTexture[tileJustSeen[0]][tileJustSeen[1]] = TextureMap.TEXTURE_MAP.get(tileJustSeenColour);
         this.gridTextureType[tileJustSeen[0]][tileJustSeen[1]] = tileJustSeenColour;
 
         int antRowIndex = ant.x / ant.width;
         int antColumnIndex = ant.y / ant.height;
+
+        if (antRowIndex <= 0 || antRowIndex >= maxRow || antColumnIndex <= 0 || antColumnIndex >= maxColumn) {
+            this.resetAnt = true;
+        }
 
         this.gridColourCurrent = gridTextureType[antRowIndex][antColumnIndex];
 

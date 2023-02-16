@@ -17,6 +17,8 @@ public class ControllerGrid {
 
     public TextureType getGridColourCurrent() { return modelGrid.getGridColourCurrent(); }
 
+    public boolean isResetAnt() { return modelGrid.isResetAnt(); }
+
     public void render(SpriteBatch batch, Rectangle ant, TextureType rotation, int[] tileJustSeen, TextureType tileJustSeenColour) {
 
         this.modelGrid.render(batch, ant, rotation, tileJustSeen, tileJustSeenColour);
