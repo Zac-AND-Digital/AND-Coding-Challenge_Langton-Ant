@@ -60,6 +60,8 @@ public class Main extends ApplicationAdapter {
 	@Override
 	public void render () {
 
+		if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) Gdx.app.exit();
+
 		if (Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) {
 
 			Gdx.graphics.setVSync(true);
