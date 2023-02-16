@@ -1,7 +1,5 @@
 package com.and.challenge;
 
-import com.and.challenge.constant.CameraResolution;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 
@@ -14,9 +12,8 @@ public class DesktopLauncher {
 
 		config.setTitle("AND Code Challenge - Langton's Ant");
 		config.setMaximized(true);
-		config.useVsync(true);
 		config.setIdleFPS(Lwjgl3ApplicationConfiguration.getDisplayMode().refreshRate / 4);
-		config.setForegroundFPS(Lwjgl3ApplicationConfiguration.getDisplayMode().refreshRate);
+		config.setForegroundFPS(0);
 
 		new Lwjgl3Application(new Main(), config);
 
