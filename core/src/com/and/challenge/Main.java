@@ -36,12 +36,8 @@ public class Main extends ApplicationAdapter {
 		int gWidth = TextureMap.TEXTURE_MAP.get(TextureType.GRID_WHITE).getWidth();
 		int gHeight = TextureMap.TEXTURE_MAP.get(TextureType.GRID_WHITE).getHeight();
 
-		System.out.println("Screen Resolution: " + Gdx.graphics.getBackBufferWidth() + "x" + Gdx.graphics.getBackBufferHeight());
-
 		CameraResolution.WIDTH = (int) (gWidth * (Math.floor((double) CameraResolution.WIDTH / (double) gWidth)));
 		CameraResolution.HEIGHT = (int) (gHeight * (Math.floor((double) CameraResolution.HEIGHT / (double) gHeight)));
-
-		System.out.println("Camera Resolution -> " + CameraResolution.WIDTH + "x" + CameraResolution.HEIGHT);
 
 		this.camera = new OrthographicCamera();
 		this.camera.setToOrtho(true, CameraResolution.WIDTH, CameraResolution.HEIGHT);
