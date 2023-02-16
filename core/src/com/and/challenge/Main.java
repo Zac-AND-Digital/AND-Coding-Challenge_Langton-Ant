@@ -26,6 +26,7 @@ public class Main extends ApplicationAdapter {
 
 	private float antPauseTime;
 	private boolean followAnt;
+	private boolean turboMode;
 
 
 	@Override
@@ -47,6 +48,7 @@ public class Main extends ApplicationAdapter {
 
 		this.antPauseTime = 0.256f;
 		this.followAnt = false;
+		this.turboMode = false;
 
 		this.controllerGrid = new ControllerGrid(CameraResolution.WIDTH, CameraResolution.HEIGHT);
 		this.controllerAnt = new ControllerAnt(antPauseTime);
@@ -61,6 +63,7 @@ public class Main extends ApplicationAdapter {
 		if (Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) {
 
 			Gdx.graphics.setVSync(true);
+			this.turboMode = false;
 			this.antPauseTime += ANT_PAUSE_TIME_INC_DEC;
 			if (antPauseTime > 1.024f) this.antPauseTime = 1.024f;
 			this.controllerAnt.setAntPauseTime(antPauseTime);
@@ -68,15 +71,28 @@ public class Main extends ApplicationAdapter {
 		} else if (Gdx.input.isKeyJustPressed(Input.Keys.RIGHT)) {
 
 			Gdx.graphics.setVSync(true);
+			this.turboMode = false;
 			this.antPauseTime -= ANT_PAUSE_TIME_INC_DEC;
 			if (antPauseTime < 0.064f) this.antPauseTime = 0.128f;
 			this.controllerAnt.setAntPauseTime(antPauseTime);
 
 		} else if (Gdx.input.isKeyJustPressed(Input.Keys.T)) {
 
-			this.antPauseTime = 0.0f;
-			Gdx.graphics.setVSync(false);
-			this.controllerAnt.setAntPauseTime(antPauseTime);
+			this.turboMode ^= true;
+
+			if (turboMode) {
+
+				this.antPauseTime = 0.0f;
+				Gdx.graphics.setVSync(false);
+				this.controllerAnt.setAntPauseTime(antPauseTime);
+
+			} else {
+
+				this.antPauseTime = 0.256f;
+				Gdx.graphics.setVSync(true);
+				this.controllerAnt.setAntPauseTime(antPauseTime);
+
+			}
 
 		} else if (Gdx.input.isKeyJustPressed(Input.Keys.BACKSPACE)) {
 
