@@ -3,7 +3,6 @@ package com.and.challenge.ant;
 import com.and.challenge.constant.CameraResolution;
 import com.and.challenge.constant.TextureMap;
 import com.and.challenge.constant.TextureType;
-import com.badlogic.gdx.math.RandomXS128;
 
 import java.awt.*;
 import java.util.concurrent.ThreadLocalRandom;
