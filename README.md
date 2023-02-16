@@ -13,8 +13,8 @@ Challenge 2 - "Antics"
 
 1. <b>LEFT ARROW</b> = Slow Down
 2. <b>RIGHT ARROW</b> = Speed Up
-3. <b>T</b> = Turbo Mode :)
-4. <b>F</b> = Follow the Ant
+3. <b>T</b> = Turbo Mode Enable :) / Turbo Mode Disable :(
+4. <b>F</b> = Follow the Ant / Unfollow the Ant
 
 ---
 
