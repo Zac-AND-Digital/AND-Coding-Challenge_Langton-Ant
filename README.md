@@ -3,6 +3,12 @@ Challenge 2 - "Antics"
 
 ---
 
+<b>Requirements</b>
+
+1. Java >= 11
+
+---
+
 <b>Controls (Ant)</b>
 
 1. <b>LEFT ARROW</b> = Slow Down
