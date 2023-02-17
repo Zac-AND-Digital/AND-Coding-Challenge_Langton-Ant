@@ -13,7 +13,7 @@ Challenge 2 - "Antics"
 
 1. <b>LEFT ARROW</b> = Slow Down
 2. <b>RIGHT ARROW</b> = Speed Up
-3. <b>T</b> = Turbo Mode Enable :) / Turbo Mode Disable :(
+3. <b>T</b> = Turbo Mode Enable :sunglasses: / Turbo Mode Disable :frowning_face:
 4. <b>F</b> = Follow the Ant / Unfollow the Ant
 
 ---
