@@ -1,11 +1,19 @@
 # AND-Coding-Challenge_Langton-Ant
 Challenge 2 - "Antics"
 
+Implementation of [Langton's Ant](https://en.wikipedia.org/wiki/Langton%27s_ant) in Java using the LibGDX Framework for the AND Coding Challenge 2023.
+
 ---
 
 <b>Requirements</b>
 
 1. Java >= 11
+
+---
+
+<b>Running</b>
+
+1. W.I.P
 
 ---
 
