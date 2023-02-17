@@ -20,8 +20,9 @@ Challenge 2 - "Antics"
 
 <b>Controls (Other)</b>
 
-1. <b>BACKSPACE</b> = Restart
-2. <b>ESCAPE</b> = Exit
+1. <b>I</b> = Invert Grid Colours
+2. <b>BACKSPACE</b> = Restart
+3. <b>ESCAPE</b> = Exit
 
 ---
 
