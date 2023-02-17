@@ -127,7 +127,7 @@ public class ModelAnt {
 
                 case SOUTH:
                     this.direction = Direction.WEST;
-                    this.antTexture = TextureType.ANT_EAST;
+                    this.antTexture = TextureType.ANT_WEST;
                     this.ant.x -= moveAmount;
                     break;
 

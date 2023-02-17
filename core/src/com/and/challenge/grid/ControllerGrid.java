@@ -25,6 +25,12 @@ public class ControllerGrid {
 
     }
 
+    public void invert(Rectangle ant) {
+
+        this.modelGrid.invert(ant);
+
+    }
+
     public void dispose() {
 
         this.modelGrid.dispose();

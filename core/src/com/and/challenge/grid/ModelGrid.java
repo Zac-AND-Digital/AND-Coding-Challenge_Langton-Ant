@@ -92,6 +92,32 @@ public class ModelGrid {
 
     }
 
+    void invert(Rectangle ant) {
+
+        for (int row = 0; row < gridTextureType.length; row++) {
+
+            for (int column = 0; column < gridTextureType[row].length; column++) {
+
+                if (gridTextureType[row][column] == TextureType.GRID_WHITE) {
+                    this.gridTextureType[row][column] = TextureType.GRID_BLACK;
+                    this.gridTexture[row][column] = TextureMap.TEXTURE_MAP.get(TextureType.GRID_BLACK);
+                }
+                else {
+                    this.gridTextureType[row][column] = TextureType.GRID_WHITE;
+                    gridTexture[row][column] = TextureMap.TEXTURE_MAP.get(TextureType.GRID_WHITE);
+                }
+
+            }
+
+        }
+
+        int antRowIndex = ant.x / ant.width;
+        int antColumnIndex = ant.y / ant.height;
+
+        this.gridColourCurrent = gridTextureType[antRowIndex][antColumnIndex];
+
+    }
+
     void dispose() {
 
         for (TextureType textureType : TextureType.values()) TextureMap.TEXTURE_MAP.get(textureType).dispose();

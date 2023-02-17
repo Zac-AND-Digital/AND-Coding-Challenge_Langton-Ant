@@ -58,9 +58,11 @@ public class Main extends ApplicationAdapter {
 	@Override
 	public void render () {
 
-		if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) Gdx.app.exit();
+		if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
 
-		if (Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) {
+			Gdx.app.exit();
+
+		}  else if (Gdx.input.isKeyJustPressed(Input.Keys.LEFT)) {
 
 			Gdx.graphics.setVSync(true);
 			this.turboMode = false;
@@ -110,6 +112,11 @@ public class Main extends ApplicationAdapter {
 				this.camera.position.y = defaultCameraPosition[2];
 
 			}
+
+		} else if (Gdx.input.isKeyJustPressed(Input.Keys.I)) {
+
+			this.controllerGrid.invert(controllerAnt.getAnt());
+			return;
 
 		}
 
