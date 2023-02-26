@@ -13,7 +13,21 @@ Implementation of [Langton's Ant](https://en.wikipedia.org/wiki/Langton%27s_ant)
 
 <b>Running</b>
 
-1. W.I.P
+1. **Windows**
+    * Extract `AND-Coding-Challenge_Langton-Ant.zip`
+    * Run `Run_Windows.bat`
+  
+2. <b>macOS</b>
+    * Extract `AND-Coding-Challenge_Langton-Ant.zip`
+    * In a terminal, navigate inside the new `AND-Coding-Challenge_Langton-Ant` folder
+    * Type `chmod +x Run_macOS.sh`
+    * Type `./Run_macOS.sh`
+  
+3. <b>Linux</b>
+    * Extract `AND-Coding-Challenge_Langton-Ant.zip`
+    * In a terminal, navigate inside the new `AND-Coding-Challenge_Langton-Ant` folder
+    * Type `chmod +x Run_Linux.sh`
+    * Type `./Run_Linux.sh`
 
 ---
 
