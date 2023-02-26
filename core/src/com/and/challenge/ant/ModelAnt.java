@@ -66,8 +66,6 @@ public class ModelAnt {
             this.ant.x = ant.width * (Math.round((float) antRow / (float) ant.width));
             this.ant.y = ant.height * (Math.round((float) antColumn / (float) ant.height));
 
-            System.out.println("Ant Randomised Position -> " + "(" + ant.x + ", " + ant.y + ")");
-
         }
 
         this.tileJustSeen[0] = ant.x / ant.width;

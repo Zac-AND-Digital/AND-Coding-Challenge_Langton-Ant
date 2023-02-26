@@ -75,7 +75,7 @@ public class Main extends ApplicationAdapter {
 			Gdx.graphics.setVSync(true);
 			this.turboMode = false;
 			this.antPauseTime -= ANT_PAUSE_TIME_INC_DEC;
-			if (antPauseTime < 0.064f) this.antPauseTime = 0.128f;
+			if (antPauseTime < 0.064f) this.antPauseTime = 0.064f;
 			this.controllerAnt.setAntPauseTime(antPauseTime);
 
 		} else if (Gdx.input.isKeyJustPressed(Input.Keys.T)) {
